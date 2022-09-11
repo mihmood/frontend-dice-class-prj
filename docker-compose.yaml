@@ -34,26 +34,27 @@ services:
 # networks:
       #    - application
 
-  frontend:
+  frontend-app:
+    #image: mihmood/frontend-app:1.4
     build: 
-      context: '' 
-      #context: mihmood/microservices-class-prj/frontend-node/
+      context: .
       dockerfile: Dockerfile
     init: true
     environment:
       #BACKEND_URL: backend:9090
-      BACKEND_URL: backend:8080
+      BACKEND_URL: backend-app:9090
     deploy:
       replicas: 1
     networks:
     - application
     ports:
     - "9091:8080"
-      #    depends_on:
-      #    - backend
+    depends_on:
+    - backend-app
+
 networks:
   application:
-    name: application
+      # name: application
 #volumes:
 #  - /home/ubuntu/dice_working/mysql_container_lab/mysql_vol:/var/lib/mysql
 #
