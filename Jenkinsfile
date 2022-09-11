@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('Build') {
 			steps {
-				dir('microservices-class-prj'){
+				dir(''){
 					sh 'docker compose build'
 				}
 			} 
@@ -24,7 +24,7 @@ pipeline {
 			steps{
 				script {
 					docker.withRegistry( '', registryCredential ) {
-						sh 'docker compose push mihmood/microservices-class-prj:latest'
+						sh 'docker compose push mihmood/frontend-python:latest'
 					} 
 				}
 			} 
