@@ -4,9 +4,9 @@ services:
     image: mihmood/backend-python:latest
     build: 
       #context: backend-python/
-      context: backend-dice-class-prj/
+      #context: backend-dice-class-prj/
       #context: mihmood/microservices-class-prj/backend-python/
-      dockerfile: Dockerfile
+      #dockerfile: Dockerfile
     init: true
     deploy:
       replicas: 1
