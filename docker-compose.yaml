@@ -42,7 +42,7 @@ services:
     - application
 
   frontend-app:
-    build: .
+    build: 
       #context: 
       #dockerfile: Dockerfile
     init: true
